@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #main {
+            display: flex;
+            align-content: space-between;
+        }
+
+        #main>div {
+            margin: 20px;
+            border: 5px solid blue;
+            width: 25%;
+            height: 430px;
+            border-radius: 15px;
+            box-shadow: 10px 10px 8px 4px black;
+            text-align: center;
+            line-height: 30px;
+            background-color: black;
+            color: yellow;
+        }
+
+        #main img {
+            height: 180px;
+            width: 100%;
+            border-radius: 15px;
+            color: aqua;
+        }
+
+        div>h1 {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: aqua;
+        }
+
+        #main>div>h1:first-child {
+            color: palevioletred;
+        }
+    </style>
+</head>
+
+<body>
+    <!--       <div>
+                    <img src=${data[i]?.flags.png} alt=${data[i]?.flags.alt}/>
+                    <h1>Country Name ${data[i]?.name?.official}</h1>
+                    <p>Currency ${currData[0]?.symbol} ${currData[0]?.name}</p>
+                    <p>Language ${lang}</p>
+                    <p>Population ${data[i]?.population}</p>   
+                </div>-->
+    <input type="text" name="" id="inp">
+    <button onclick="getData()">Submit</button>
+
+    <div id="main"></div>
+
+    <script>
+        function getData() {
+            let inp = document.querySelector('#inp')
+            console.log(inp.value);
+            getCountry(inp.value);
+        }
+        function getCountry(country) {
+            let request = new XMLHttpRequest()
+            request.open('GET', `https://restcountries.com/v3.1/name/${country}`)
+            request.send()
+
+            request.addEventListener('load', function () {
+                let data = JSON.parse(this.responseText)
+                console.log(data);
+
+                for (let i = 0; i < data.length; i++) {
+                    let curr = data[0].currencies
+                    console.log(curr);
+                    let currData = Object.values(curr)
+                    console.log(currData);
+                    //Language
+                    let lang = Object.values(data[0]?.languages).join('')
+                    console.log(lang);
+
+                    let html = `
+                <div>
+                    <h1>Country Data</h1>
+                    <img src=${data[i]?.flags.png} alt=${data[i]?.flags.alt}/>
+                    <h1>Country Name ${data[i]?.name?.official}</h1>
+                    <p>Currency ${currData[0]?.symbol} ${currData[0]?.name}</p>
+                    <p>Language ${lang}</p>
+                    <p>Population ${data[i]?.population}</p>   
+                </div>
+                    `
+                    let main = document.getElementById('main')
+                    main.insertAdjacentHTML('beforeend', html)
+                }
+            })
+        }
+        getCountry('china')
+    </script>
+</body>
+
+</html>

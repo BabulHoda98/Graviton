@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 450px));
+        }
+
+        #main>section {
+            border: 2px solid red;
+            background-image: linear-gradient(red, aqua, green);
+            color: white;
+            text-align: center;
+            margin: 20px;
+            width: 80%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main"></div>
+    <script>
+        // let a = {
+        //     name: "Kalpana", age: 67, profession: "Singer",
+        //     favCuisine:{
+        //         breafast:['Tea','Waffel'],
+        //         lunch:'Rice and Rajma',dinner:'Sandwich'
+        //     }
+        // }
+
+        // console.log(a);
+        // console.log(a.profession);
+        // console.log(a.favCuisine?.lunch);
+
+        // let{name,age}=a
+        // console.log(name);
+
+        // console.log(Object.keys(a));
+        // console.log(Object.values(a));
+
+        // Promises
+        // const a = new Promise((resolve,reject)=>{
+        //     const b=true
+        //     if(b){
+        //         resolve('IT SRESOLVED')
+        //     }else{
+        //         reject('REJECTED')
+        //     }
+        // })
+        // console.log(a);
+        //consume a promise
+        // a.then(value=>console.log(value))
+        // a.catch(err=>console.log(err))
+
+        // let p1=new Promise((resolve,reject)=>{
+        //     setTimeout(()=>{
+        //         resolve('FIRST');
+        //         // reject('ERROR IN ONE')
+        //     },5000);
+        // })
+        // let p2=new Promise((resolve,reject)=>{
+        //     setTimeout(()=>{
+        //         // resolve('SECOND');
+        //         reject('ERROR IN TWO')
+        //     },2000);
+        // })
+        // let p3=new Promise((resolve,reject)=>{
+        //     setTimeout(()=>{
+        //         // resolve('THIRD');
+        //         reject('ERROR IN THREE')
+        //     },1000);
+        // })
+        // // let a = Promise.all([p1,p2,p3]) 
+        // // let a = Promise.all([p1,p2,p3]) 
+        // // let a = Promise.all([p1,p2,p3]) 
+
+        // let a = Promise.any ([p1,p2,p3])
+        // a.then(data=>console.log(data))
+
+        // let a = fetch('https://jsonplaceholder.typicode.com/posts')
+        // console.log(a);
+        // a
+        // .then(value=>value.json())
+        // .then(data=>console.log(data))
+
+        // async function b(){
+        //     let a=await fetch('https://jsonplaceholder.typicode.com/posts')
+        //     let b=await a.json()
+        //     return b
+
+        // }
+        // console.log(b());
+
+
+        // --------------------------------------------------------------------------------------
+        // excercise
+        function output(data) {
+            let html = `
+                <section>
+                    <h1>${data.id}</h1>
+                    <h1>Title says=${data.title}</h1>
+                    <h2>Body says=${data.body}</h2>
+                </section>
+                `
+            return html
+        }
+        // let datas = fetch('https://jsonplaceholder.typicode.com/posts')
+        // datas.then(val => val.json())
+        //     .then(data => {
+        //         console.log(data)
+        //         for (let i = 0; i<data.length; i++) {
+
+        //             let sendData = data[i]
+        //             let frontEnd = output(sendData)
+        //             // console.log(front);
+        //             let main = document.getElementById('main')
+        //             main.insertAdjacentHTML('beforeend', frontEnd)
+        //         }
+        //     })
+
+        async function two() {
+            try {
+                let d = await fetch('https://jsonplaceholder.typicode.com/posts')
+                let a = await d.json()
+                let b = await a
+                console.log(a);
+                for (let i = 0; i < b.length; i++) {
+                    let sendData = b[i]
+                    let frontEnd = output(sendData)
+                    // console.log(front);
+                    let main = document.getElementById('main')
+                    main.insertAdjacentHTML('beforeend', frontEnd)
+                } 
+            }catch(error){
+                console.log(error);
+            }
+            }
+
+        two()
+    </script>
+</body>
+
+</html>
