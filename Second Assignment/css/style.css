@@ -1,0 +1,136 @@
+/* CSS Reset */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-align: center;
+}
+:root {
+    --navbar-height: 59px;
+}
+
+/* Navigation Bar */
+#navbar {
+    position: sticky;
+    top: 0px;
+    /* left:0px; */
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+#navbar::before {
+    content: "";
+    background-color: black;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+/* Navigation Bar: Logo and Image */
+#logo {
+    margin: 10px 34px;
+}
+
+#logo img {
+    height: 56px;
+    margin-right: 3px 6px;
+}
+
+ul {
+    display: flex;
+    /* font-family: 'Baloo Bhai,Cursive'; */
+}
+#navbar ul li {
+    list-style: none;
+    font-size: 1.3rem;
+}
+#navbar ul li a {
+    color: white;
+    display: block;
+    padding: 0px 22px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+navbar ul li a:hover {
+    /* color: rgb(188, 54, 54); */
+    background-color: rgb(142, 17, 17);
+    cursor: pointer;
+
+    /* padding: 8px; */
+    /* margin-right: 10px; */
+    /* font-family: cursive; */
+    /* cursor:pointer; */
+    /* transition: all 2s; */
+    /* color: red; */
+} 
+
+
+
+/* video containt */
+.main {
+    border: var(--blueborder);
+    height: 100vh;
+}
+.main:before {
+    content: "";
+    border: var(--redborder);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    /* background-image: linear-gradient(rgb(226, 4, 4, 0.8),
+            rgb(25, 231, 25, 0.3)); */
+    top: 0;
+    left: 0;
+}
+
+.main>video {
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+}
+.watermark{
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    color: white;
+    font-size: 50px;
+}
+/* Our skills */
+#skills{
+    margin: 34px;
+    display: flex;
+}
+#skills .box{
+    border:2px solid rgb(147, 244, 136);
+    padding: 34px;
+    margin: 2px 6px;
+    border-radius: 50%;
+    /* border-radius: 50px; */
+    background-color: rgb(240, 246, 247);
+    margin-bottom: 20px;
+}
+#skills .box img{
+    height: 160px;
+    margin: auto;
+    display:block;
+}
+#skills.skills-center{
+    text-align: center;
+}
+
+
+section1{
+    border: 5px solid red;
+    height: 100vh;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+/*   */

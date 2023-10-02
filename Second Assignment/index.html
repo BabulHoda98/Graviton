@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      * {
+          padding: 0;
+          margin: 0;
+          box-sizing: border-box;
+      }
+
+      table {
+          margin-top: 50px;
+          width: 100vw;
+          border: 3px solid blue;
+          border-spacing: 20px;
+      }
+
+      th {
+          /* border-bottom: 5px solid  ; */
+      }
+
+      td {
+          /* border: 2px solid ; */
+          text-align: center;
+      }
+
+      .succes,
+      .error {
+          color: wheat;
+          padding: 8px;
+          margin: 5px 0 15px 0;
+      }
+
+      .succes {
+          background-color: green;
+      }
+
+      .error {
+          background-color: tomato;
+      }
+  </style>
+  </head>
+  <body>
+    <navbar id="navbar">
+      <div id="logo">
+        <img src="logo.png" />
+      </div>
+      <ul>
+        <li class="item"><a href="#home">Home</a></li>
+        <li class="item"><a href="#services-container">About</a></li>
+        <li class="item"><a href="#client-section">Servive</a></li>
+        <li class="item"><a href="#contact">Contact Us</a></li>
+      </ul>
+      <div class="search">
+        <i class="fa-solid fa-magnifying-glass">
+          <input type="search" name="" id="" placeholder="Search"
+        /></i>
+      </div>
+    </navbar>
+
+    <div class="main">
+      <video autoplay muted loop>
+        <source src="170724_15_Setangibeach.mp4" type="video/mp4" />
+      </video>
+      <h1 class="watermark">Scroll Karo ~~~</h1>
+    </div>
+
+    <section id="skills-containskills-center">
+      <h1>Our Skill</h1>
+      <div id="skills">
+        <div class="box">
+          <img src="img/ReactJs.png" alt="" />
+          <h2 class="skills-center">ReactJs</h2>
+          <p id="skills">
+            ReactJS is a popular JavaScript library for building user interfaces
+            and UI components. It was developed by Facebook and is widely used
+            for creating dynamic and interactive web applications.
+          </p>
+        </div>
+        
+        <div class="box">
+          <img src="img/JS.png" alt="" />
+          <h2 class="skills-center">JavaScript</h2>
+          <p id="skills">
+            JvaScript is a widely-used programming language primarily known for
+            its role in building interactive and dynamic web applications.It is
+            a versatile language that can be executed in web browsers
+          </p>
+        </div>
+        <div class="box">
+          <img src="img/css.png" alt="" />
+          <h2 class="skills-center">CSS+HTML</h2>
+          <p id="skills">
+            HTML (Hypertext Markup Language) and CSS (Cascading Style Sheets)
+            are two essential technologies used together to create and style web
+            pages.HTML is responsible for structuring the content and defining
+            the elements on a web page
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section>
+    <div class="card">
+      <div class="front">
+        <img -->
+    <!-- </div> -->
+    <!-- <div class="back"> -->
+    <!-- text -->
+    <!-- </div> -->
+    <!-- </div> -->
+    <!-- </section> -->
+  </body>
+</html>
